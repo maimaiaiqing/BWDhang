@@ -22,25 +22,40 @@
 
 <style type="text/css">
       
-/* 让a标签变成块级元素且宽度自适应 */
-a.thumbnail {
-  display: block;
-  width: 100%;
+/* 核心布局：大屏四列，小屏两列 */
+@media(max-width:768px) {
+  /* 每个li宽度设置为50%，实现两列 */
+  .image-list li {
+    width: calc(50% - 10px); /* 留间距 */
+    display: inline-block; /* 横排 */
+  }
 }
 
-/* 图片宽度自适应 */
-a.thumbnail img {
+/* 在大屏默认四列布局（如果没有指明，建议保持原来的样式） */
+.image-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+  
+/* 图片自适应 */
+.thumb-link img {
   width: 100%;
   height: auto;
   display: block;
 }
-/* 默认在大屏幕是四列，手机端两列 */
-@media(max-width: 768px) {
-  /* 让所有a标签宽度为50% */
-  a.thumbnail {
-    display: inline-block; /* 改成inline-block，或者用flex */
-    width: calc(50% - 10px); /* 留一些间距 */
-  }
+
+/* 文字内容过多隐藏，保持排版整齐 */
+.title {
+  overflow: hidden; /* 超出隐藏 */
+  text-overflow: ellipsis; /* 省略号 */
+  white-space: nowrap; /* 一行 */
+  font-size: 14px; /* 可调节 */
+  color: #333;
+}
+	.image-list li {
+  width: calc(50% - 10px) !important;
+  display: inline-block !important;
 }
     </style>
 	</head>
