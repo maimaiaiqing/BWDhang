@@ -2,9 +2,9 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<meta name="keywords" content="啪啪啪AV-免费资源丰富无广告..." />
-		<meta name="description" content="啪啪啪AV-免费资源丰富无广告..." />
-		<title>啪啪啪AV</title>
+		<meta name="keywords" content="啪啪XX-免费资源丰富无广告..." />
+		<meta name="description" content="啪啪XX-免费资源丰富无广告..." />
+		<title>啪啪XX</title>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE10">
 <meta name="renderer" content="webkit|ie-comp|ie-stand">
@@ -44,29 +44,41 @@
   justify-content: flex-start; /* 对齐方式，可根据需要调整 */
 }
 
-li {
-  width: 25%; /* 每个占四分之一宽度 */
-  padding: 5px; /* 内边距可调节 */
-  box-sizing: border-box;
-}
-
-li img {
-  width: 100%; /* 让图片宽度充满容器 */
-  height: auto; /* 保持比例自动调整高度 */
-  display: block; /* 去除底部空隙 */
-}
-.image-list {
+/* 基础样式 */
+.gallery {
   display: flex;
   flex-wrap: wrap;
-  margin: 0;
-  padding: 0;
+  gap: 10px; /* 图之间的间距 */
+  justify-content: center;
 }
 
-.image-list li {
-  width: 25%;
-  list-style: none;
-  box-sizing: border-box;
-  padding: 5px;
+.item {
+  display: flex;
+  flex-direction: column;
+  width: calc(25% - 10px); /* 电脑端四列 */
+}
+
+.item img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* 文字过长隐藏 */
+.caption {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin-top: 5px;
+  font-size: 14px;
+  color: #333;
+}
+
+/* 手机端两列 */
+@media (max-width: 768px) {
+  .item {
+    width: calc(50% - 10px); /* 手机端两列 */
+  }
 }
     </style>
 	</head>
