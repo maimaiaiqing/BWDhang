@@ -21,41 +21,65 @@
 <script>var maccms={"path":"/rukou","mid":"","url":"https://綁鎊y.papaslr.xyz/霸王茶姬/","wapurl":"https://綁鎊y.papaslr.xyz/霸王茶姬/","mob_status":"0"};</script>
 
 <style type="text/css">
-      
-/* 核心布局：大屏四列，小屏两列 */
-@media(max-width:768px) {
-  /* 每个li宽度设置为50%，实现两列 */
-  .image-list li {
-    width: calc(50% - 10px); /* 留间距 */
-    display: inline-block; /* 横排 */
-  }
-}
-
-/* 在大屏默认四列布局（如果没有指明，建议保持原来的样式） */
+/* 样式只影响你特定的图片列表 */
 .image-list {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 10px; /* 图之间间距，根据需要调节 */
 }
-  
-/* 图片自适应 */
-.thumb-link img {
+
+/* 电脑端四列 */
+.image-list li {
+  flex: 1 1 calc(25% - 10px);
+  display: flex;
+  flex-direction: column;
+}
+
+/* 确保图片宽度自适应 */
+.image-list li img {
   width: 100%;
   height: auto;
   display: block;
 }
 
-/* 文字内容过多隐藏，保持排版整齐 */
-.title {
-  overflow: hidden; /* 超出隐藏 */
-  text-overflow: ellipsis; /* 省略号 */
-  white-space: nowrap; /* 一行 */
-  font-size: 14px; /* 可调节 */
-  color: #333;
+/* 文字内容过长隐藏 */
+.image-list li .title {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
-	.image-list li {
-  width: calc(50% - 10px) !important;
-  display: inline-block !important;
+
+/* 手机端两列 */
+@media(max-width: 768px) {
+  .image-list li {
+    flex: 1 1 calc(50% - 10px);
+  }
+}
+/* 电脑端，保持原有布局（四列、最大宽度） */
+@media(min-width: 769px) {
+  /* 不做特殊调整，保持原样，确保其它样式不被覆盖 */
+}
+
+/* 手机端，设置两列 */
+@media(max-width: 768px) {
+  /* 让所有目标元素宽50%，两列 */
+  a[target="_blank"] {
+    display: inline-block;       /* 改成块元素横排 */
+    width: calc(50% - 10px);     /* 每个宽度50%减去间距，比如10px */
+    vertical-align: top;
+  }
+  /* 确保图片宽自适应 */
+  a[target="_blank"] img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  /* 隐藏过长文字（假设文字在a内或后面用对应的类名） */
+  a[target="_blank"] + .long-text {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
 }
     </style>
 	</head>
