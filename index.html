@@ -42,40 +42,38 @@
   display: block;
 }
 
-/* 文字内容过长隐藏 */
-.image-list li .title {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-/* 手机端两列 */
+/* 只在手机端生效 */
 @media(max-width: 768px) {
-  .image-list li {
-    flex: 1 1 calc(50% - 10px);
-  }
-}
-/* 电脑端，保持原有布局（四列、最大宽度） */
-@media(min-width: 769px) {
-  /* 不做特殊调整，保持原样，确保其它样式不被覆盖 */
-}
+  /* 让ul内部的<li>或直接的a标签两列 */
+  /* 如果每个图片在a里面，可以怎么写？假设你的结构如下： */
 
-/* 手机端，设置两列 */
-@media(max-width: 768px) {
-  /* 让所有目标元素宽50%，两列 */
-  a[target="_blank"] {
-    display: inline-block;       /* 改成块元素横排 */
-    width: calc(50% - 10px);     /* 每个宽度50%减去间距，比如10px */
+  /* 例： */
+  /* <ul class="image-list"> */
+  /*   <li><a href="#" target="_blank">
+         <img src="图片.jpg" />
+         <div class="caption">这里是长文字描述</div>
+       </a></li>
+        ... */
+  /* </ul> */
+
+  /* 方案：让a标签宽度为50% */
+  .image-list > li {
+    display: inline-block;
+    width: calc(50% - 10px); /* 两列，调整间距 */
     vertical-align: top;
   }
-  /* 确保图片宽自适应 */
-  a[target="_blank"] img {
+  /* 确保a的内容占满 */
+  .image-list > li > a {
+    display: block; /* 让a充满li */
+  }
+  /* 图片自适应 */
+  .image-list > li > a > img {
     width: 100%;
     height: auto;
     display: block;
   }
-  /* 隐藏过长文字（假设文字在a内或后面用对应的类名） */
-  a[target="_blank"] + .long-text {
+  /* 隐藏过长文字（假定它在.caption里面） */
+  .image-list > li > a > .caption {
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
