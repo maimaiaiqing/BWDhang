@@ -22,41 +22,26 @@
 
 <style type="text/css">
       
-/* 样式只影响你特定的图片列表 */
-.image-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px; /* 图之间间距，根据需要调节 */
+/* 让a标签变成块级元素且宽度自适应 */
+a.thumbnail {
+  display: block;
+  width: 100%;
 }
 
-/* 电脑端四列 */
-.image-list li {
-  flex: 1 1 calc(25% - 10px);
-  display: flex;
-  flex-direction: column;
-}
-
-/* 确保图片宽度自适应 */
-.image-list li img {
+/* 图片宽度自适应 */
+a.thumbnail img {
   width: 100%;
   height: auto;
   display: block;
 }
-
-/* 文字内容过长隐藏 */
-.image-list li .title {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-/* 手机端两列 */
+/* 默认在大屏幕是四列，手机端两列 */
 @media(max-width: 768px) {
-  .image-list li {
-    flex: 1 1 calc(50% - 10px);
+  /* 让所有a标签宽度为50% */
+  a.thumbnail {
+    display: inline-block; /* 改成inline-block，或者用flex */
+    width: calc(50% - 10px); /* 留一些间距 */
   }
 }
-
     </style>
 	</head>
 	<body>
@@ -386,7 +371,7 @@
 					<div class="mhlleset-main">
                  	<div class="mhlleset-heading clearfix" style="overflow: hidden;">
 						   	<h3 class="mhlleset-title">热门视频</h3>
-				<h3 class="mhlleset-title" style="float: right;"><a href="https://t.me/skp7se" target="_blank">跟多</a></h3>
+				<h3 class="mhlleset-title" style="float: right;"><a href="https://t.me/skp7se" target="_blank">更多</a></h3>
 						</div></div>
 						<ul class="image-list">
 						                               
