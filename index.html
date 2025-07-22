@@ -38,16 +38,16 @@
             height: 260px;
         } 
         }
- /* 只针对你的图片列表容器，加一个类名，例如 .image-list 的情况下 */
+/* 样式只影响你特定的图片列表 */
 .image-list {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px; /* 图片间距，可调节 */
+  gap: 10px; /* 图之间间距，根据需要调节 */
 }
 
-/* 让每个图片容器宽度在电脑端是四个一排，手机端两个一排 */
+/* 电脑端四列 */
 .image-list li {
-  flex: 1 1 calc(25% - 10px); /* 电脑：四列 */
+  flex: 1 1 calc(25% - 10px);
   display: flex;
   flex-direction: column;
 }
@@ -56,20 +56,20 @@
 .image-list li img {
   width: 100%;
   height: auto;
+  display: block;
 }
 
 /* 文字内容过长隐藏 */
-.image-list li .title { /* 假设文字在一个 class 为 .title 的元素内 */
+.image-list li .title {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  margin-top: 5px;
 }
 
-/* 手机端切换两列 */
-@media(max-width:768px) {
+/* 手机端两列 */
+@media(max-width: 768px) {
   .image-list li {
-    flex: 1 1 calc(50% - 10px); /* 两列 */
+    flex: 1 1 calc(50% - 10px);
   }
 }
 
@@ -498,7 +498,7 @@
 						<ul class="image-list">
 						   							    
 
-<li><a class="thumbnail" href="/rukou/index.php/vod/detail/id/147614.html" name="rdmonclick" target="_blank"><img class="loadi" data-original="https://img.huangguazy1.com/upload/vod/20240514-1/54321fe0c4b5aa1893e20e0ab546ec04.jpg" src="https://img.huangguazy1.com/upload/vod/20250718-1/3dcbe4cfbf14e7bdf9ecddefe2c421d5.jpg">
+<li><a class="thumbnail" href="/rukou/index.php/vod/detail/id/147614.html" name="rdmonclick" target="_blank"><img class="loadi" data-original="https://img.huangguazy1.com/upload/vod/20240514-1/54321fe0c4b5aa1893e20e0ab546ec04.jpg" src="https://sbzytpimg1.com:3519/upload/vod/20250718-1/695e1eb5ee4032b17b8d4fe6746fe1c4.jpg">
 </a>
 <div class="video-info">
 <h5><a href="/rukou/index.php/vod/detail/id/147614.html" name="rdmonclick" target="_blank">邻家姐姐醉酒后的勾引</a></h5>
