@@ -42,38 +42,31 @@
   display: block;
 }
 
-/* 只在手机端生效 */
 @media(max-width: 768px) {
-  /* 让ul内部的<li>或直接的a标签两列 */
-  /* 如果每个图片在a里面，可以怎么写？假设你的结构如下： */
-
-  /* 例： */
-  /* <ul class="image-list"> */
-  /*   <li><a href="#" target="_blank">
-         <img src="图片.jpg" />
-         <div class="caption">这里是长文字描述</div>
-       </a></li>
-        ... */
-  /* </ul> */
-
-  /* 方案：让a标签宽度为50% */
+  /* 调整li的布局为两列 */
   .image-list > li {
     display: inline-block;
-    width: calc(50% - 10px); /* 两列，调整间距 */
+    width: calc(50% - 10px); /* 两列，保持间隔 */
     vertical-align: top;
+    box-sizing: border-box;
+    margin-bottom: 10px; /* 根据需要调整 */
   }
-  /* 确保a的内容占满 */
-  .image-list > li > a {
-    display: block; /* 让a充满li */
+
+  /* 确保a标签以内内容占满li */
+  .image-list > li > a.thumbnail {
+    display: block;
+    width: 100%;
   }
+
   /* 图片自适应 */
-  .image-list > li > a > img {
+  .image-list > li > a.thumbnail img {
     width: 100%;
     height: auto;
     display: block;
   }
-  /* 隐藏过长文字（假定它在.caption里面） */
-  .image-list > li > a > .caption {
+
+  /* 隐藏长文字或隐藏超出部分（可选） */
+  .video-info h5 {
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
